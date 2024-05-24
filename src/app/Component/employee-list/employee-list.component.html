@@ -1,0 +1,26 @@
+<table class="table" >
+    <thead > 
+        <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Position</th>
+          </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let emp of EmployeeList; let i = index">
+            <th>{{i+1}}</th>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.dob | date: 'dd-MM-YYY'}}</td>
+            <td>{{emp.position}}</td>
+          </tr>
+    </tbody>
+  </table>
+<!-- 
+  <li>
+    <ul *ngFor="let emp of List;" >
+      {{emp.firstName}}
+    </ul>
+  </li> -->
