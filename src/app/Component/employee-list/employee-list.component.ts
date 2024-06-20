@@ -4,11 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { routes } from '../../app.routes';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [CommonModule ],
+  imports: [CommonModule , RouterOutlet ],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css'
 

@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/EmployeeList">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/Home/EmployeeList">Employee List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/AddEmployee">Link</a>
+            <a class="nav-link" routerLink="/Home/AddEmployee">Add Employee</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,4 +51,5 @@
   </nav>
 
   <!-- [List]="EmpList" -->
-  <app-employee-list></app-employee-list>
+  <!-- <app-employee-list></app-employee-list> -->
+  <router-outlet></router-outlet>

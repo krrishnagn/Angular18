@@ -11,14 +11,14 @@ export const routes: Routes = [
     },
     {
         path : "Home",
-        component : HomeComponent
-    },
-    {
-        path : "AddEmployee",
-        component : AddEmployeeComponent
-    },
-    {
-        path : "EmployeeList",
-        component : EmployeeListComponent
+        component : HomeComponent,
+        children : [{
+            path : "AddEmployee",
+            component : AddEmployeeComponent
+        },
+        {
+            path : "EmployeeList",
+            component : EmployeeListComponent
+        }]
     }
 ];
