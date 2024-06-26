@@ -17,4 +17,12 @@ export class LoginService {
   GetEmployeeList(){
     return this.http.get<any>(`${this.baseUrl}Employee/GetEmployees`)
   }
+
+  AddEmployee( payload : any ){
+    return this.http.post<any>(`${this.baseUrl}Employee/SaveEmployee` , payload)
+  }
+
+  GetPositionList(){
+    return this.http.get<any>(`${this.baseUrl}Employee/GetPositionList`)
+  }
 }
