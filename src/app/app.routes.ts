@@ -11,7 +11,7 @@ export const routes: Routes = [
     },
     {
         path : "Home",
-        component : HomeComponent,
+        component : HomeComponent, 
         children : [{
             path : "AddEmployee",
             component : AddEmployeeComponent

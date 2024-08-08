@@ -1,0 +1,30 @@
+/* app.component.css or styles.css */
+
+.app-container {
+    display: grid;
+    height: 100vh;
+  }
+  
+  app-top-bar {
+    flex-shrink: 0;
+  }
+  
+  .main-content {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  app-side-menu {
+    width: 250px;
+    flex-shrink: 0;
+  }
+  
+  .page-wrapper {
+    width: 100%;
+    overflow:scroll;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  

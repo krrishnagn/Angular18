@@ -12,4 +12,7 @@ height: calc(100% - 73px);
 .h-custom {
 height: 100%;
 }
+div#footer{
+    position: fixed;
+}
 }

@@ -25,4 +25,11 @@ export class LoginService {
   GetPositionList(){
     return this.http.get<any>(`${this.baseUrl}Employee/GetPositionList`)
   }
+
+  DeletEmployee(empId : number){
+    return this.http.delete<any>(`${this.baseUrl}Employee/DeleteEmployee/${empId}`)
+  }
+  GetMenu(){
+    return this.http.get<any>(`${this.baseUrl}Employee/GetMenu`)
+  }
 }

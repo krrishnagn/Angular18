@@ -73,7 +73,7 @@
                 <label for="Category">Position Category</label>
                 <select id="Category" formControlName="category" class="form-control" [ngClass]="{'is-invalid': employeeForm.get('category')?.invalid && employeeForm.get('category')?.touched}">
                   <option value="" disabled>Select Position Category</option>
-                  <option *ngFor="let pos of positionList" [ngValue]="pos.position">{{ pos.position }}</option>
+                  <option *ngFor="let pos of positionList" [ngValue]="pos.positionID">{{ pos.position }}</option>
                 </select>
                 <div *ngIf="employeeForm.get('category')?.invalid && employeeForm.get('category')?.touched" class="invalid-feedback">
                   Position Category is required.
@@ -98,7 +98,7 @@
       <div class="form-row">
           <div class="form-group col-md-6 mb-3">
               <label for="email">Email</label>
-              <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter email" [ngClass]="{'is-invalid': employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched}">
+              <input id="email" type="email" [readOnly]="readonly" formControlName="email" class="form-control" placeholder="Enter email" [ngClass]="{'is-invalid': employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched}">
               <div *ngIf="employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched" class="invalid-feedback">
                   Valid Email is required.
               </div>
@@ -113,8 +113,12 @@
             Password is required and must be at least 6 characters.
           </div>
         </div>
+        
+        <div class="row col-lg-6">
+          <button type="submit" class="btn btn-primary w-50 " [disabled]="employeeForm.invalid">Submit</button>
+          <button type="button" class="btn btn-danger w-50" (click)="OnCancel()" >Cancel</button>
 
-        <button type="submit" class="btn btn-primary w-100" [disabled]="employeeForm.invalid">Submit</button>
+        </div>
       </form>
     </div>
   </div>
@@ -131,7 +135,7 @@
         {{ modalMessage }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" id="close1" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

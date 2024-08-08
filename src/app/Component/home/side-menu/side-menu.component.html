@@ -1,0 +1,20 @@
+
+<div class="sidebar d-flex flex-column p-3 bg-dark text-white">
+    <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let menu of menus">
+            <div *ngIf="menu.url === '' || null ">
+                <a class="nav-link text-white" style="font-weight:bold;"  (click)="toggleSubmenu(menu)">{{ menu.menuName }}</a>
+            </div>
+            <div *ngIf="menu.url !== '' || null ">
+                <a class="nav-link text-white" style="font-weight:bold;"  [routerLink]='menu.url' (click)="toggleSubmenu(menu)">{{ menu.menuName }}</a>
+            </div>
+            <div class="collapse" [ngClass]="{'show': isActive(menu)}">
+                <ul class="list-unstyled pl-3">
+                    <li class="nav-item" *ngFor="let submenu of menu.subMenu">
+                        <a class="nav-link text-white" [routerLink]='submenu.url' >{{ submenu.menuName }}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+  </div>

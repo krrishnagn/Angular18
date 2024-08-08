@@ -7,41 +7,17 @@ import { LoginComponent } from '../login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../Service/login.service';
 import { CommonModule } from '@angular/common';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { TopBarComponent } from "./top-bar/top-bar.component";
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [EmployeeListComponent, RouterLink, FormsModule, AppComponent, AddEmployeeComponent , LoginComponent , CommonModule , RouterOutlet]
+    imports: [EmployeeListComponent, RouterLink, FormsModule, AppComponent, AddEmployeeComponent, LoginComponent, CommonModule, RouterOutlet, SideMenuComponent, TopBarComponent]
 })
-export class HomeComponent implements OnInit {
-
-
-    loginService = inject(LoginService)
-    
-    EmpList : any;
-    
-  ngOnInit(): void {
-
-    // this.loginService.GetEmployeeList().subscribe((response) => {
-    //   console.log(response , 'Employeelist');
-    //   this.EmpList = response
-    // },
-    // (error) => {
-    //   console.log(error , 'Emp list error')
-    // })
-}
-
-
-    Add : string = ''
-    list : string[] = [];
-
-    AddText()
-    {
-        this.list.push(this.Add);
-        this.Add = ''
-    }
+export class HomeComponent {
 
 
 
